@@ -1,0 +1,628 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 152  of event 'cpu_atom/cycles/Pu'
+# Event count (approx.): 40359833
+#
+# Children      Self  Command  Shared Object        Symbol                                                                                                  
+# ........  ........  .......  ...................  ........................................................................................................
+#
+   100.00%     0.00%  bench    [unknown]            [.] 0x0000000000000001
+            |
+            ---0x1
+               0x7ea97a7ff810
+               |          
+               |--99.27%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               |          |          
+               |          |--63.63%--now (inlined)
+               |          |          |          
+               |          |           --62.25%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               |          |                     duration<long int, std::ratio<1> > (inlined)
+               |          |                     duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               |          |                     __cast<long int, std::ratio<1> > (inlined)
+               |          |                     |          
+               |          |                     |--58.96%--clock_gettime
+               |          |                     |          |          
+               |          |                     |           --57.23%--__vdso_clock_gettime
+               |          |                     |          
+               |          |                      --3.30%--__vdso_clock_gettime
+               |          |          
+               |          |--2.98%--clock_gettime
+               |          |          
+               |           --2.60%--0xffffffff9a601280
+               |          
+                --0.73%--cfree
+
+   100.00%     0.00%  bench    [unknown]            [.] 0x00007ea97a7ff810
+            |
+            ---0x7ea97a7ff810
+               |          
+               |--99.27%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               |          |          
+               |          |--63.63%--now (inlined)
+               |          |          |          
+               |          |           --62.25%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               |          |                     duration<long int, std::ratio<1> > (inlined)
+               |          |                     duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               |          |                     __cast<long int, std::ratio<1> > (inlined)
+               |          |                     |          
+               |          |                     |--58.96%--clock_gettime
+               |          |                     |          |          
+               |          |                     |           --57.23%--__vdso_clock_gettime
+               |          |                     |          
+               |          |                      --3.30%--__vdso_clock_gettime
+               |          |          
+               |          |--2.98%--clock_gettime
+               |          |          
+               |           --2.60%--0xffffffff9a601280
+               |          
+                --0.73%--cfree
+
+    99.27%    32.08%  bench    bench                [.] RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+            |          
+            |--67.19%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+            |          |          
+            |          |--63.63%--now (inlined)
+            |          |          |          
+            |          |           --62.25%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+            |          |                     duration<long int, std::ratio<1> > (inlined)
+            |          |                     duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+            |          |                     __cast<long int, std::ratio<1> > (inlined)
+            |          |                     |          
+            |          |                     |--58.96%--clock_gettime
+            |          |                     |          |          
+            |          |                     |           --57.23%--__vdso_clock_gettime
+            |          |                     |          
+            |          |                      --3.30%--__vdso_clock_gettime
+            |          |          
+            |           --2.98%--clock_gettime
+            |          
+             --32.08%--0x1
+                       0x7ea97a7ff810
+                       RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+                       |          
+                        --2.60%--0xffffffff9a601280
+
+    63.63%     0.00%  bench    libstdc++.so.6.0.36  [.] now (inlined)
+            |
+            ---now (inlined)
+               |          
+                --62.25%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+                          duration<long int, std::ratio<1> > (inlined)
+                          duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+                          __cast<long int, std::ratio<1> > (inlined)
+                          |          
+                          |--58.96%--clock_gettime
+                          |          |          
+                          |           --57.23%--__vdso_clock_gettime
+                          |          
+                           --3.30%--__vdso_clock_gettime
+
+    62.25%     0.00%  bench    libstdc++.so.6.0.36  [.] operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+            |
+            ---operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               duration<long int, std::ratio<1> > (inlined)
+               duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--58.96%--clock_gettime
+               |          |          
+               |           --57.23%--__vdso_clock_gettime
+               |          
+                --3.30%--__vdso_clock_gettime
+
+    62.25%     0.00%  bench    libstdc++.so.6.0.36  [.] duration<long int, std::ratio<1> > (inlined)
+            |
+            ---duration<long int, std::ratio<1> > (inlined)
+               duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--58.96%--clock_gettime
+               |          |          
+               |           --57.23%--__vdso_clock_gettime
+               |          
+                --3.30%--__vdso_clock_gettime
+
+    62.25%     0.00%  bench    libstdc++.so.6.0.36  [.] duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+            |
+            ---duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--58.96%--clock_gettime
+               |          |          
+               |           --57.23%--__vdso_clock_gettime
+               |          
+                --3.30%--__vdso_clock_gettime
+
+    62.25%     0.00%  bench    libstdc++.so.6.0.36  [.] __cast<long int, std::ratio<1> > (inlined)
+            |
+            ---__cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--58.96%--clock_gettime
+               |          |          
+               |           --57.23%--__vdso_clock_gettime
+               |          
+                --3.30%--__vdso_clock_gettime
+
+    61.94%     2.02%  bench    libc.so.6            [.] clock_gettime
+            |          
+            |--59.93%--clock_gettime
+            |          |          
+            |           --57.23%--__vdso_clock_gettime
+            |          
+             --2.02%--0x1
+                       0x7ea97a7ff810
+                       RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+                       |          
+                       |--1.31%--now (inlined)
+                       |          operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+                       |          duration<long int, std::ratio<1> > (inlined)
+                       |          duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+                       |          __cast<long int, std::ratio<1> > (inlined)
+                       |          clock_gettime
+                       |          
+                        --0.71%--clock_gettime
+
+    60.95%    60.95%  bench    [vdso]               [.] __vdso_clock_gettime
+            |
+            ---0x1
+               0x7ea97a7ff810
+               RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               now (inlined)
+               operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               duration<long int, std::ratio<1> > (inlined)
+               duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--57.65%--clock_gettime
+               |          |          
+               |           --57.23%--__vdso_clock_gettime
+               |          
+                --3.30%--__vdso_clock_gettime
+
+     3.66%     3.66%  bench    libstdc++.so.6.0.36  [.] std::chrono::_V2::steady_clock::now()
+            |
+            ---0x1
+               0x7ea97a7ff810
+               RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               |          
+               |--2.28%--clock_gettime
+               |          
+                --1.38%--now (inlined)
+
+     2.60%     0.00%  bench    [unknown]            [.] 0xffffffff9a601280
+            |
+            ---0xffffffff9a601280
+
+     0.73%     0.73%  bench    libc.so.6            [.] cfree
+            |
+            ---0x1
+               0x7ea97a7ff810
+               cfree
+
+     0.57%     0.57%  bench    [unknown]            [k] 0xffffffff9a601988
+            |
+            ---0x1
+               0x7ea97a7ff810
+               RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+
+
+
+# Samples: 2K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 1238458505
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    88.78%     0.00%  bench    [unknown]             [k] 0x0000000000000001
+            |
+            ---0x1
+               0x7ea97a7ff810
+               |          
+               |--86.86%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               |          |          
+               |          |--39.46%--now (inlined)
+               |          |          |          
+               |          |           --37.26%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               |          |                     duration<long int, std::ratio<1> > (inlined)
+               |          |                     duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               |          |                     __cast<long int, std::ratio<1> > (inlined)
+               |          |                     |          
+               |          |                     |--34.71%--clock_gettime
+               |          |                     |          |          
+               |          |                     |           --33.98%--__vdso_clock_gettime
+               |          |                     |          
+               |          |                      --2.12%--__vdso_clock_gettime
+               |          |          
+               |          |--2.54%--0xffffffff9a601280
+               |          |          
+               |           --2.08%--clock_gettime
+               |          
+               |--1.04%--std::chrono::_V2::steady_clock::now()@plt
+               |          
+                --0.68%--now (inlined)
+
+    88.78%     0.00%  bench    [unknown]             [k] 0x00007ea97a7ff810
+            |
+            ---0x7ea97a7ff810
+               |          
+               |--86.86%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               |          |          
+               |          |--39.46%--now (inlined)
+               |          |          |          
+               |          |           --37.26%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               |          |                     duration<long int, std::ratio<1> > (inlined)
+               |          |                     duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               |          |                     __cast<long int, std::ratio<1> > (inlined)
+               |          |                     |          
+               |          |                     |--34.71%--clock_gettime
+               |          |                     |          |          
+               |          |                     |           --33.98%--__vdso_clock_gettime
+               |          |                     |          
+               |          |                      --2.12%--__vdso_clock_gettime
+               |          |          
+               |          |--2.54%--0xffffffff9a601280
+               |          |          
+               |           --2.08%--clock_gettime
+               |          
+               |--1.04%--std::chrono::_V2::steady_clock::now()@plt
+               |          
+                --0.68%--now (inlined)
+
+    88.01%    44.94%  bench    bench                 [.] RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+            |          
+            |--44.94%--0x1
+            |          0x7ea97a7ff810
+            |          |          
+            |          |--43.78%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+            |          |          |          
+            |          |           --2.54%--0xffffffff9a601280
+            |          |          
+            |           --1.04%--std::chrono::_V2::steady_clock::now()@plt
+            |          
+             --43.07%--RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+                       |          
+                       |--39.46%--now (inlined)
+                       |          |          
+                       |           --37.26%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+                       |                     duration<long int, std::ratio<1> > (inlined)
+                       |                     duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+                       |                     __cast<long int, std::ratio<1> > (inlined)
+                       |                     |          
+                       |                     |--34.71%--clock_gettime
+                       |                     |          |          
+                       |                     |           --33.98%--__vdso_clock_gettime
+                       |                     |          
+                       |                      --2.12%--__vdso_clock_gettime
+                       |          
+                        --2.08%--clock_gettime
+
+    40.14%     0.00%  bench    libstdc++.so.6.0.36   [.] now (inlined)
+            |
+            ---now (inlined)
+               |          
+                --37.26%--operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+                          duration<long int, std::ratio<1> > (inlined)
+                          duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+                          __cast<long int, std::ratio<1> > (inlined)
+                          |          
+                          |--34.71%--clock_gettime
+                          |          |          
+                          |           --33.98%--__vdso_clock_gettime
+                          |          
+                           --2.12%--__vdso_clock_gettime
+
+    38.07%     2.20%  bench    libc.so.6             [.] clock_gettime
+            |          
+            |--35.87%--clock_gettime
+            |          |          
+            |           --33.98%--__vdso_clock_gettime
+            |          
+             --2.20%--0x1
+                       0x7ea97a7ff810
+                       RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+                       |          
+                       |--1.28%--now (inlined)
+                       |          operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+                       |          duration<long int, std::ratio<1> > (inlined)
+                       |          duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+                       |          __cast<long int, std::ratio<1> > (inlined)
+                       |          |          
+                       |           --0.85%--__vdso_clock_gettime
+                       |          
+                        --0.91%--clock_gettime
+
+    37.26%     0.00%  bench    libstdc++.so.6.0.36   [.] operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+            |
+            ---operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+               duration<long int, std::ratio<1> > (inlined)
+               duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--34.71%--clock_gettime
+               |          |          
+               |           --33.98%--__vdso_clock_gettime
+               |          
+                --2.12%--__vdso_clock_gettime
+
+    37.26%     0.00%  bench    libstdc++.so.6.0.36   [.] duration<long int, std::ratio<1> > (inlined)
+            |
+            ---duration<long int, std::ratio<1> > (inlined)
+               duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--34.71%--clock_gettime
+               |          |          
+               |           --33.98%--__vdso_clock_gettime
+               |          
+                --2.12%--__vdso_clock_gettime
+
+    37.26%     0.00%  bench    libstdc++.so.6.0.36   [.] duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+            |
+            ---duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+               __cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--34.71%--clock_gettime
+               |          |          
+               |           --33.98%--__vdso_clock_gettime
+               |          
+                --2.12%--__vdso_clock_gettime
+
+    37.26%     0.00%  bench    libstdc++.so.6.0.36   [.] __cast<long int, std::ratio<1> > (inlined)
+            |
+            ---__cast<long int, std::ratio<1> > (inlined)
+               |          
+               |--34.71%--clock_gettime
+               |          |          
+               |           --33.98%--__vdso_clock_gettime
+               |          
+                --2.12%--__vdso_clock_gettime
+
+    36.83%    35.98%  bench    [vdso]                [.] __vdso_clock_gettime
+            |          
+            |--35.98%--0x1
+            |          0x7ea97a7ff810
+            |          RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+            |          now (inlined)
+            |          operator+<long int, std::ratio<1>, long int, std::ratio<1, 1000000000> > (inlined)
+            |          duration<long int, std::ratio<1> > (inlined)
+            |          duration_cast<std::chrono::duration<long int, std::ratio<1, 1000000000> >, long int, std::ratio<1> > (inlined)
+            |          __cast<long int, std::ratio<1> > (inlined)
+            |          |          
+            |          |--34.71%--clock_gettime
+            |          |          |          
+            |          |           --33.98%--__vdso_clock_gettime
+            |          |          
+            |           --1.27%--__vdso_clock_gettime
+            |          
+             --0.85%--__vdso_clock_gettime
+
+     6.68%     0.00%  bench    [unknown]             [.] 0x43006c706d692d2d
+            |
+            ---0x43006c706d692d2d
+               0x7ffc4fa70aec
+               |          
+                --6.66%--main
+                          |          
+                           --6.07%--build_workload(int, unsigned int)
+
+     6.68%     0.00%  bench    [unknown]             [.] 0x00007ffc4fa70aec
+            |
+            ---0x7ffc4fa70aec
+               |          
+                --6.66%--main
+                          |          
+                           --6.07%--build_workload(int, unsigned int)
+
+     6.66%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+                --6.07%--build_workload(int, unsigned int)
+
+     6.39%     6.04%  bench    bench                 [.] build_workload(int, unsigned int)
+            |          
+             --5.93%--0x43006c706d692d2d
+                       0x7ffc4fa70aec
+                       main
+                       |          
+                        --5.72%--build_workload(int, unsigned int)
+
+     3.98%     3.98%  bench    libstdc++.so.6.0.36   [.] std::chrono::_V2::steady_clock::now()
+            |
+            ---0x1
+               0x7ea97a7ff810
+               RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+               |          
+               |--2.20%--now (inlined)
+               |          
+                --1.16%--clock_gettime
+
+     3.00%     0.00%  bench    [unknown]             [.] 0xffffffff9a601280
+            |
+            ---0xffffffff9a601280
+
+     1.80%     1.48%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |          
+             --0.58%--0x38ca
+
+     1.72%     0.68%  bench    bench                 [.] std::chrono::_V2::steady_clock::now()@plt
+            |          
+            |--1.04%--std::chrono::_V2::steady_clock::now()@plt
+            |          
+             --0.68%--0x1
+                       0x7ea97a7ff810
+                       now (inlined)
+
+     1.54%     1.07%  bench    bench                 [.] build_workload(int, unsigned int)::{lambda()#1}::operator()() const [clone .isra.0]
+            |          
+             --0.71%--0x38ca
+
+     1.44%     1.22%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.39%     0.00%  bench    [unknown]             [.] 0x00000000000038ca
+            |
+            ---0x38ca
+
+     1.05%     1.05%  bench    [unknown]             [k] 0xffffffff9a601988
+            |          
+             --0.92%--0x1
+                       0x7ea97a7ff810
+                       RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+
+     0.82%     0.82%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.32%     0.05%  bench    bench                 [.] std::vector<Level, std::allocator<Level> >::reserve(unsigned long)
+     0.22%     0.20%  bench    libc.so.6             [.] malloc
+     0.15%     0.12%  bench    bench                 [.] unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]
+     0.11%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b020868
+     0.11%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b021ae1
+     0.11%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b0202e0
+     0.10%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b0123e1
+     0.09%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00f533
+     0.08%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b023a91
+     0.06%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00ab96
+     0.06%     0.00%  bench    bench                 [.] operator delete(void*, unsigned long)@plt
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea978579a00
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9785a1130
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9785a9c68
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000206a6030
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9784fff20
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000f6036ec0
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea97854b798
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9784eb398
+     0.05%     0.00%  bench    [unknown]             [.] 0x000000005ac120f1
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000391ebe03
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea97849b438
+     0.05%     0.00%  bench    [unknown]             [.] 0x000000003448e5c5
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000377203dd
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9784cacc8
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000df23ec3e
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea97846d120
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000a69166f9
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9784ba3b0
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea97840bb08
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea97853df90
+     0.05%     0.00%  bench    [unknown]             [.] 0x0000000032680011
+     0.05%     0.00%  bench    [unknown]             [.] 0x000000006534fa3e
+     0.05%     0.00%  bench    [unknown]             [.] 0x00000000d42ea5bc
+     0.05%     0.00%  bench    [unknown]             [.] 0x000000001e134f07
+     0.05%     0.00%  bench    [unknown]             [.] 0x000000002ca6bdfd
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea978528110
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9783e7328
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9783de080
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea97843e410
+     0.05%     0.00%  bench    [unknown]             [.] 0x00007ea9784308f8
+     0.05%     0.00%  bench    [unknown]             [.] 0x0000000042f7c0e0
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000640ed3f2
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000e509a9f1
+     0.04%     0.00%  bench    [unknown]             [.] 0x00007ea9783b1400
+     0.04%     0.00%  bench    [unknown]             [.] 0x000000009eb38462
+     0.04%     0.00%  bench    [unknown]             [.] 0x00007ea978513540
+     0.04%     0.00%  bench    [unknown]             [.] 0x000000001d6aa77b
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000d18a0dc3
+     0.04%     0.00%  bench    [unknown]             [.] 0x00007ea97839ce38
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000c02c5a70
+     0.04%     0.00%  bench    [unknown]             [.] 0x00007ea97837e2c8
+     0.04%     0.00%  bench    [unknown]             [.] 0x00007ea97837a418
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000ca8ff88d
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000129f648f
+     0.04%     0.00%  bench    [unknown]             [.] 0x0000000080c8e802
+     0.04%     0.00%  bench    [unknown]             [.] 0x000000004660865e
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000d46cf187
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000c99e53f5
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000b43c9aca
+     0.04%     0.00%  bench    [unknown]             [.] 0x0000000014857dde
+     0.04%     0.00%  bench    [unknown]             [.] 0x00007ea97833a160
+     0.04%     0.00%  bench    [unknown]             [.] 0x000000003e8251ed
+     0.04%     0.00%  bench    [unknown]             [.] 0x00000000d943fe32
+     0.04%     0.04%  bench    libc.so.6             [.] cfree
+     0.03%     0.00%  bench    [unknown]             [.] 0x0000000075b2d399
+     0.03%     0.00%  bench    [unknown]             [.] 0x0000000073ae73ac
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000e62388b6
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000032b02be
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000cc68fe83
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea9782ff128
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000005e6a65b7
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea9782f3960
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000000c3b99fc
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000007e46740c
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000008b49baf2
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000001f3ca9c0
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000d48813b5
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea9782320f8
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea97822f0e8
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000bf066918
+     0.03%     0.00%  bench    [unknown]             [.] 0x0000000086341948
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea978228030
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000cbb25edb
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000847b4f84
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000a553a966
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000f0e3fad6
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000e16aa291
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000c068b8c5
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000cc1435a2
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000004178aea6
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000d229ac6f
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000a96ca939
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000008fcee05a
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea978269f28
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000004a2ef4fc
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000f426019b
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea9782b7790
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000007708257f
+     0.03%     0.00%  bench    [unknown]             [.] 0x0000000092257436
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000bc7ccd97
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea97820a228
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000b981a18f
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea978294428
+     0.03%     0.00%  bench    [unknown]             [.] 0x000000007e055ee1
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea978291608
+     0.03%     0.00%  bench    [unknown]             [.] 0x0000000028edcd25
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000a1a165d1
+     0.03%     0.00%  bench    [unknown]             [.] 0x00007ea97828bd78
+     0.03%     0.00%  bench    [unknown]             [.] 0x00000000179a7671
+     0.02%     0.00%  bench    [unknown]             [.] 0x0000000012e0af40
+     0.02%     0.00%  bench    [unknown]             [.] 0x000000008d2e7944
+     0.02%     0.00%  bench    [unknown]             [.] 0x000000006e66117a
+     0.02%     0.00%  bench    [unknown]             [.] 0x00000000b12b3ccb
+     0.02%     0.00%  bench    [unknown]             [.] 0x00000000bfa51852
+     0.02%     0.00%  bench    [unknown]             [.] 0x0000000000000e1f
+     0.02%     0.00%  bench    [unknown]             [.] 0x00007ea9781e18e8
+     0.02%     0.00%  bench    [unknown]             [.] 0x00000000f05a60ad
+     0.02%     0.00%  bench    [unknown]             [.] 0x000000000f4863c3
+     0.02%     0.02%  bench    ld-linux-x86-64.so.2  [.] 0x0000000000015f4c
+     0.02%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b014f51
+     0.02%     0.00%  bench    [unknown]             [.] 0x00000000000004d4
+     0.02%     0.00%  bench    [unknown]             [.] 0x00007ea9781db780
+     0.02%     0.02%  bench    ld-linux-x86-64.so.2  [.] 0x000000000000afa7
+     0.02%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b009fb0
+     0.02%     0.02%  bench    ld-linux-x86-64.so.2  [.] 0x000000000002951a
+     0.02%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00a2c6
+     0.02%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b02851e
+     0.02%     0.02%  bench    libstdc++.so.6.0.36   [.] operator new(unsigned long)
+     0.01%     0.01%  bench    ld-linux-x86-64.so.2  [.] 0x000000000000babb
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00aabb
+     0.01%     0.01%  bench    ld-linux-x86-64.so.2  [.] 0x000000000000af3d
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b009f41
+     0.01%     0.01%  bench    ld-linux-x86-64.so.2  [.] 0x000000000000bb15
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00ab1a
+     0.01%     0.01%  bench    ld-linux-x86-64.so.2  [.] 0x0000000000027aac
+     0.01%     0.01%  bench    ld-linux-x86-64.so.2  [.] 0x000000000000b216
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b023709
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b002dbd
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b02397e
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] _dl_catch_exception
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00287d
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b007a9c
+     0.01%     0.00%  bench    [unknown]             [.] 0x000000009f799d6b
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b00a219
+     0.01%     0.00%  bench    ld-linux-x86-64.so.2  [.] 0x00007ea97b026ab4
+     0.01%     0.01%  bench    libm.so.6             [.] exp2f
+     0.01%     0.00%  bench    libm.so.6             [.] __exp2f_ifunc (inlined)
+     0.01%     0.00%  bench    libm.so.6             [.] exp2f_ifunc_selector (inlined)
+
+
+#
+# (Tip: To group events which need to be collected together for accuracy use {}: perf record -e {cycles,branches}' ...)
+#
