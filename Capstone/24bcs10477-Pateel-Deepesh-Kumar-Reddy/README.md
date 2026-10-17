@@ -114,7 +114,8 @@ perf report
 # repeat for B and C
 ```
 
-Raw output is in `results/perf_stat_*.txt` and `results/perf_record_*.txt`.
+`perf stat` output is in `results/perf_stat_*.txt`. `perf report` output is in
+`results/perf_record_*.txt`, listing each symbol with 1% or more self time.
 This CPU is hybrid, so `perf` splits each counter into `cpu_core/*` (P-cores)
 and `cpu_atom/*` (E-cores). Do not sum the two rows: they are the two halves of
 one total. The report uses the `cpu_core` row. `cpu_atom/L1-dcache-load-misses`
